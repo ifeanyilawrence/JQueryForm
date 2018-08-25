@@ -85,6 +85,8 @@ $(document).ready(function() {
             $('#nextOfKin').show();
             $('#passport').hide();
 
+            $("#loadingSteps").hide();
+
         } else {
             alert("Please fill all the fields!");
         }
@@ -142,6 +144,7 @@ $(document).ready(function() {
             $('#lnkPassport').removeClass("disabled");
             $('#lnkPassport').addClass("active");
             $('#passport').show();
+            $("#loadingSteps").hide();
         } else {
 
             alert("Please fill all the fields!");
