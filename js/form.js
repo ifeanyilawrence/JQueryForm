@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     $('#btnBiodata').click(function() {
 
-        var sexId = $("#sex_Id").val();
+        var sexId = $("#sex_id").val();
         var dob = $("#dob").val();
         var stateId = $("#state_id").val();
         var homeTown = $("#hometown").val();
@@ -36,14 +36,16 @@ $(document).ready(function() {
         var homeAddress = $("#home_address").val();
         var abilityId = $("#ability_id").val();
         var extraCurricullarActivities = $("#extra_curricullar_activities").val();
-        personId = $("#person_id").val();
+        var surname = $("#surname").val();
+        var firstname = $("#firstname").val();
+        var othername = $("#othername").val();
 
-        if (sexId && dob && stateId && homeTown && mobilePhone && email && religionId && homeAddress && abilityId && extraCurricullarActivities) {
+        if (sexId && dob && stateId && homeTown && mobilePhone && email && religionId && homeAddress && abilityId && extraCurricullarActivities && surname && firstname && othername) {
 
             $("#loadingSteps").show();
 
             //get entered values
-            var bioDataArray = populateJsonData();
+            //var bioDataArray = populateJsonData();
 
             //post to your method
             // $.ajax({
@@ -199,13 +201,6 @@ $(document).ready(function() {
 
 });
 
-function formPreview() {
-    $("#loadingPreview").show();
-    assignFormValues();
-    $(".printable").print();
-    $("#loadingPreview").hide();
-}
-
 function showNotification(colorName, text, placementFrom, placementAlign, animateEnter, animateExit) {
     if (colorName === null || colorName === '') {
         colorName = 'bg-purple';
@@ -250,7 +245,7 @@ function showNotification(colorName, text, placementFrom, placementAlign, animat
 
 function assignFormValues() {
 
-    $("#lastname_prev").text($("#lastname").val());
+    $("#surname_prev").text($("#surname").val());
     $("#firstname_prev").text($("#firstname").val());
     $("#othername_prev").text($("#othername").val());
     $("#sex_prev").text($("#sex_id option:selected").text());
